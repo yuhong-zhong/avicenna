@@ -25,6 +25,10 @@
                 <i data-feather="{{ $news_icon }}"></i>
                 {{ end }}
 
+                {{ if $item.extra_text }}
+                <span class="secondary_font text-muted">{{ markdownify (emojify $item.extra_text) }} </span>
+                {{end}}
+
                 {{ if $item.link}}
                 <a href='{{ $item.link }}' target="_blank">
                     {{ markdownify (emojify $item.text) }}
@@ -32,10 +36,6 @@
                 {{ else }}
                 {{ markdownify (emojify $item.text) }}
                 {{ end }}
-
-                {{ if $item.extra_text }}
-                <span class="secondary_font text-muted">, {{ markdownify (emojify $item.extra_text) }}</span>
-                {{end}}
 
             </li>
             {{ end }}

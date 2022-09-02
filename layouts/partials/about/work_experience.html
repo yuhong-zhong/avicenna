@@ -1,0 +1,41 @@
+{{ $content_type := .Params.content_type }}
+
+{{ $aboutPage := .Site.GetPage $content_type }}
+
+{{ if or $aboutPage.Params.work_experience}}
+
+{{if $aboutPage.Params.work_experience}}
+<div class="academia col">
+    <h4 class="main_color">Industry Experience</h4>
+    {{range $work_experience := $aboutPage.Params.work_experience}}
+    <div class="row">
+        <div class="course col">
+            <div class="institution_dates row">
+                <div class="institution col" id="institution_title">
+                    {{$work_experience.work.company}}
+                </div>
+                <div class="main_color dates col-md-auto  justify-content-end">
+                    {{$work_experience.work.start_date}}
+                    {{ if $work_experience.work.end_date }}
+                    - {{$work_experience.work.end_date}}
+                    {{else}}{{end}}
+                </div>
+            </div>
+            <div class="degree_major row">
+                <div class="text-muted col">
+                    {{$work_experience.work.description}}
+                </div>
+            </div>
+            {{ if $work_experience.work.extra_description }}
+            <div class="degree_major row">
+                <div class="text-muted col">
+                    {{$work_experience.work.extra_description}}
+                </div>
+            </div>
+            {{end}}
+        </div>
+    </div>
+    {{end}}
+</div>
+{{end}}
+{{end}}
