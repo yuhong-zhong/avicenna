@@ -6,10 +6,14 @@
     <img class="rounded-circle  " src="images/profile.png" alt="profile_picture" id="profile_picture" />
 </div>
 
-
 {{ if $aboutPage.Params.full_name }}
 <div class=" row w-100 justify-content-center main_color" id="full_name">
     {{ $aboutPage.Params.full_name }}
+    {{ if $aboutPage.Params.pronoun }}
+        <div class="text-muted" id="pronoun">
+            &nbsp({{ $aboutPage.Params.pronoun }})
+        </div>
+    {{end}}
 </div>
 {{end}}
 
