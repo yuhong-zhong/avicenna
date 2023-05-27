@@ -1,0 +1,29 @@
+{{ $content_type := .Params.content_type }}
+{{ $servicePage := .Site.GetPage $content_type }}
+
+{{ $items := $servicePage.Params.items }}
+
+{{ $num_items_to_show := $servicePage.Params.num_items }}
+<div class="news row w-100">
+    <div class="col w-100">
+        <ul class="news_list">
+            {{ range $item := first $num_items_to_show (sort $items "date" "desc") }}
+
+            <li>
+                {{ if $item.extra_text }}
+                <span class="secondary_font text-muted">{{ markdownify (emojify $item.extra_text) }} </span>
+                {{end}}
+
+                {{ if $item.link}}
+                <a href='{{ $item.link }}' target="_blank">
+                    {{ markdownify (emojify $item.text) }}
+                </a>
+                {{ else }}
+                {{ markdownify (emojify $item.text) }}
+                {{ end }}
+
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</div>
