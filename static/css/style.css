@@ -15,6 +15,7 @@ a:hover {
 
 #pronoun:focus,
 #pronoun:hover {
+  /* stolen from Tao's website :) https://iamtaolong.github.io/ */
   background-image:
   linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet,red); 
   -webkit-background-clip: text;
@@ -135,6 +136,7 @@ h2 code {
 
 .news {
     margin-top: 1.5%;
+    margin-bottom: -0.5%;
 }
 
 .news_list  {
@@ -169,12 +171,15 @@ h2 code {
     margin-top: -.1%;
 }
 
+.publication .section-2 a{
+    color: #6c757d
+}
+
 .publication .best-paper span{
     font-family: 'Ubuntu Mono', serif;
     background-color: #d64933;
     color: white;
 }
-
 
 .publication .section-3 {
     font-family: 'Ubuntu Mono', serif;
