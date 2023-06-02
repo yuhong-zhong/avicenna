@@ -27,7 +27,7 @@
                 {{ if $authors }}
                 {{range $i, $author := $authors}}
                 <span>
-                    {{ markdownify $author }}
+                    {{ if strings.Contains $author "Yuhong Zhong" }}<u>{{end}}{{ markdownify $author }}{{ if strings.Contains $author "Yuhong Zhong" }}</u>{{end}}
                 </span>
                 {{ if lt $i (sub (len $authors) 1)}}
                 <span class="separator">
