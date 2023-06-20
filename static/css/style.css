@@ -13,8 +13,7 @@ a:hover {
     color: #050517;
 }
 
-#pronoun:focus,
-#pronoun:hover {
+#pronoun {
   /* stolen from Tao's website :) https://iamtaolong.github.io/ */
   background-image:
   linear-gradient(to right,red,orange,yellow,green,blue,indigo,violet,red); 
